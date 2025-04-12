@@ -7,7 +7,7 @@ import org.springframework.web.reactive.function.client.WebClient
 @Component
 class EfetivarPagamentoClient {
 
-    private val webClient = WebClient.create("http://processador-pagamento:8080")
+    private val webClient = WebClient.create("http://processador-pagamento:8081")
 
     fun processarCartao(request: Pagamento) {
         webClient.post()
