@@ -10,7 +10,7 @@ import org.springframework.web.reactive.function.client.WebClient
 class EfetivarPagamentoClient {
 
     private val webClient = WebClient.builder()
-        .baseUrl("http:/orquestrador/:8080")
+        .baseUrl("http:/orquestrador:8080")
         .defaultHeader("Content-Type", "application/json")
         .build()
 
