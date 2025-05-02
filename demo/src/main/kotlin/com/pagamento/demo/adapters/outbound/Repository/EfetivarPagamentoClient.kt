@@ -1,20 +1,21 @@
-package com.pagamento.demo.Repository
+package com.pagamento.demo.adapters.outbound.Repository
 
-import com.pagamento.demo.controller.request.PostBoletoRequest
-import com.pagamento.demo.controller.request.PostCartaoRequest
-import com.pagamento.demo.model.Pagamento
+import com.pagamento.demo.adapters.inbound.controller.request.PostBoletoRequest
+import com.pagamento.demo.adapters.inbound.controller.request.PostCartaoRequest
+import com.pagamento.demo.domain.MeioPagamentoRepositoryPort
+import com.pagamento.demo.domain.Pagamento
 import org.springframework.stereotype.Component
 import org.springframework.web.reactive.function.client.WebClient
 
 @Component
-class EfetivarPagamentoClient {
+class EfetivarPagamentoClient : MeioPagamentoRepositoryPort {
 
     private val webClient = WebClient.builder()
         .baseUrl("http://orquestrador:8080")
         .defaultHeader("Content-Type", "application/json")
         .build()
 
-    fun processarCartao(request: Pagamento) {
+    override fun processarCartao(request: Pagamento) {
         val cartao = request.dadosCartao
             ?: throw IllegalArgumentException("Pagamento com cartão sem dados do cartão")
 
@@ -34,7 +35,7 @@ class EfetivarPagamentoClient {
             .block()
     }
 
-    fun processarBoleto(request: Pagamento) {
+    override fun processarBoleto(request: Pagamento) {
         val boleto = request.dadosBoleto
             ?: throw IllegalArgumentException("Pagamento com boleto sem dados do boleto")
 

@@ -1,6 +1,6 @@
-package com.pagamento.demo.model
+package com.pagamento.demo.domain
 
-import com.pagamento.demo.controller.request.DadosPagamento
+import com.pagamento.demo.adapters.inbound.controller.request.DadosPagamento
 
 data class Cartao (
     var bandeira: String,

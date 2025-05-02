@@ -1,6 +1,6 @@
-package com.pagamento.demo.model
+package com.pagamento.demo.domain
 
-import com.pagamento.demo.enums.PagamentoTipo
+import com.pagamento.demo.domain.enums.PagamentoTipo
 import java.util.*
 
 data class Pagamento (
