@@ -1,4 +1,4 @@
-package com.pagamento.demo.controller.request
+package com.pagamento.demo.adapters.inbound.controller.request
 
 class PostBoletoRequest (
 

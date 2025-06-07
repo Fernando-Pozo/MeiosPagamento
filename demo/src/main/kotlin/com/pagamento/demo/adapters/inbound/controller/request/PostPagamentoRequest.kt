@@ -1,10 +1,10 @@
-package com.pagamento.demo.controller.request
+package com.pagamento.demo.adapters.inbound.controller.request
 
 import com.fasterxml.jackson.annotation.JsonSubTypes
 import com.fasterxml.jackson.annotation.JsonTypeInfo
-import com.pagamento.demo.enums.PagamentoTipo
-import com.pagamento.demo.model.Boleto
-import com.pagamento.demo.model.Cartao
+import com.pagamento.demo.domain.enums.PagamentoTipo
+import com.pagamento.demo.domain.Boleto
+import com.pagamento.demo.domain.Cartao
 
 class PostPagamentoRequest(
 
